@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "124248692674",
+    "project_id": "myplaylist-bdbb1",
+    "storage_bucket": "myplaylist-bdbb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124248692674:android:38ca0861149b2ef36ee85b",
+        "android_client_info": {
+          "package_name": "com.olcertugba.myplaylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124248692674-891nu1jvuotlqj0rrb4om9uq3n7a9m5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZRRTqo0YpWPgIh7jJLWivBCLTD6g17OM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124248692674-891nu1jvuotlqj0rrb4om9uq3n7a9m5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

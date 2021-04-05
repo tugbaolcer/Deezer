@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.olcertugba.myplaylist.activity.PlayListHomeViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/genderbackground"
+    tools:context=".activity.PlayListHomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/toolbar"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <fragment
+        android:id="@+id/nav_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconTint="@android:color/white"
+        app:itemIconSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_media_player"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:isGoneMediaPlayer="@{vm.isGoneMediaPlayer}"
+            >
+
+            <LinearLayout
+                android:id="@+id/lv_player_icons"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.65">
+
+                <ImageButton
+                    android:id="@+id/ibtn_track_previous"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/toolbar"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:tint="@color/whiteCardColor"
+                    app:srcCompat="@drawable/ic_previous"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/ibtn_play_player"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/toolbar"
+                    android:scaleType="center"
+                    android:tint="@color/whiteCardColor"
+                    app:iconPlayPause="@{vm.mediaPlayerState}"
+                    tools:ignore="ContentDescription" />
+
+                <ImageButton
+                    android:id="@+id/ibtn_track_forward"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/toolbar"
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:tint="@color/whiteCardColor"
+                    app:srcCompat="@drawable/ic_next"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

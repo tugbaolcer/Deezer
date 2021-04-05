@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <action
+        android:id="@+id/action_favorite"
+        app:destination="@+id/favorites" />
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.olcertugba.myplaylist.ui.favorites.FavoritesFragment"
+        tools:layout="@layout/fragment_favorites">
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_genre"
+        app:destination="@+id/homeFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.olcertugba.myplaylist.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_genreListFragment"
+            app:destination="@id/genreListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreListFragment"
+        android:name="com.olcertugba.myplaylist.ui.genre.GenreListFragment"
+        android:label="fragment_genre_list"
+        tools:layout="@layout/fragment_genre_list" >
+        <action
+            android:id="@+id/action_genreListFragment_to_artistFragment"
+            app:destination="@id/artistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistFragment"
+        android:name="com.olcertugba.myplaylist.ui.artistDetails.detail.ArtistFragment"
+        android:label="fragment_artist"
+        tools:layout="@layout/fragment_artist_detail" >
+        <action
+            android:id="@+id/action_artistFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+        <action
+            android:id="@+id/action_artistFragment_self"
+            app:destination="@id/artistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.olcertugba.myplaylist.ui.album.AlbumFragment"
+        android:label="fragment_album"
+        tools:layout="@layout/fragment_album" />
+
+    <action
+        android:id="@+id/action_search"
+        app:destination="@+id/searchFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.olcertugba.myplaylist.ui.search.SearchFragment"
+        android:label="SearchFragment" >
+
+        <action
+            android:id="@+id/action_searchFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+
+
+    </fragment>
+</navigation>
